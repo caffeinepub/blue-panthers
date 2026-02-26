@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "A website for a basketball team called 'The Blue Panthers' where people can sign up to join or follow the team.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-build-a-homepage-for-the-blue-panthers-basketball-team-featuring-the-team-name-a-short-tagline-key-team-information-section-and-a-clear-call-to-action-button-to-join-sign-up",
+      "title": "Build a homepage for the Blue Panthers basketball team featuring the team name, a short tagline, key team information section, and a clear call-to-action button to join/sign up.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-sign-up-form-page-where-visitors-can-register-their-name-email-address-and-select-a-role-player-fan-or-supporter-to-join-the-blue-panthers-community-on-submission-call-the-backend-registration-function-and-display-a-success-or-error-message",
+      "title": "Build a sign-up form page where visitors can register their name, email address, and select a role (Player, Fan, or Supporter) to join the Blue Panthers community. On submission, call the backend registration function and display a success or error message.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-bold-energetic-visual-theme-throughout-the-site-using-deep-navy-blue-and-gold-amber-as-primary-team-colors-with-strong-typography-dynamic-layout-and-basketball-inspired-design-elements-enforce-the-theme-consistently-across-all-pages",
+      "title": "Apply a bold, energetic visual theme throughout the site using deep navy blue and gold/amber as primary team colors, with strong typography, dynamic layout, and basketball-inspired design elements. Enforce the theme consistently across all pages.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-page-route-admin-that-fetches-all-registered-members-from-the-backend-using-the-existing-usegetallmembers-query-hook-and-displays-them-in-a-styled-table-showing-each-member-s-name-email-role-and-sign-up-timestamp-apply-the-blue-panthers-navy-gold-visual-theme-consistently-with-the-rest-of-the-site",
+      "title": "Create an Admin page (route: /admin) that fetches all registered members from the backend using the existing useGetAllMembers query hook and displays them in a styled table showing each member's name, email, role, and sign-up timestamp. Apply the Blue Panthers navy/gold visual theme consistently with the rest of the site.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-admin-navigation-link-in-the-shared-layout-navigation-bar-desktop-and-mobile-menus-that-routes-to-admin",
+      "title": "Add an 'Admin' navigation link in the shared Layout navigation bar (desktop and mobile menus) that routes to /admin.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-register-the-admin-route-in-the-tanstack-router-configuration-in-app-tsx-so-the-admin-page-is-reachable",
+      "title": "Register the /admin route in the TanStack Router configuration in App.tsx so the Admin page is reachable.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "User sign-up/registration functionality for team members or fans",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Team homepage showcasing the Blue Panthers brand and info",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Create a backend actor that stores team member sign-ups with fields: name, email, role (player/fan/supporter), and sign-up timestamp. Expose functions to register a new member and retrieve all members.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add an admin page that lists all registered members (name, email, role, sign-up timestamp) who have signed up for the team.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Blue Panthers",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

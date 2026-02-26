@@ -1,0 +1,57 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add admin page listing all registered members",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "summary": "Create an Admin page at /admin that displays all registered members in a styled table using the existing useGetAllMembers query hook, showing name, email, role, and sign-up timestamp with Blue Panthers navy/gold theme",
+      "acceptanceCriteria": [
+        "Navigating to /admin renders the Admin page without errors",
+        "The page displays a table or list of all registered members",
+        "Each row shows the member's name, email, role (Player/Fan/Supporter), and sign-up timestamp",
+        "The page uses the Blue Panthers navy/gold theme consistent with existing pages",
+        "If no members have signed up, a friendly empty-state message is shown",
+        "The admin route is accessible from the navigation bar"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AdminPage.tsx",
+          "operation": "create",
+          "description": "Create a new Admin page component that uses the useGetAllMembers query hook to fetch and display all registered members. Implement a styled table (or responsive card layout for mobile) showing each member's name, email, role, and sign-up timestamp formatted as a human-readable date. Apply the Blue Panthers navy (#1e3a5f) and gold (#d4af37) color scheme consistent with the existing pages. Include loading state handling, error state display, and a friendly empty-state message when no members exist. Use Tailwind CSS classes and the existing design tokens from frontend/src/index.css to maintain visual consistency with HomePage and SignUpPage."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add an 'Admin' navigation link in the Layout component's navigation bar (both desktop and mobile menus) that routes to /admin",
+      "acceptanceCriteria": [
+        "An 'Admin' link appears in both the desktop and mobile navigation menus",
+        "Clicking the link navigates to /admin",
+        "The link style is consistent with existing nav items"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Add an 'Admin' navigation link to both the desktop navigation menu and the mobile hamburger menu. Insert the link alongside the existing 'Home' link, using the same styling patterns (TanStack Router Link component with hover states and consistent typography). Ensure the link navigates to /admin and matches the visual style of other navigation items. The link should appear in both the desktop horizontal menu and the mobile dropdown menu to maintain consistency across all viewport sizes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Register the /admin route in the TanStack Router configuration in App.tsx so the Admin page is reachable",
+      "acceptanceCriteria": [
+        "The /admin route is defined in App.tsx alongside the existing / and /signup routes",
+        "Navigating directly to /admin renders the Admin page"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import the AdminPage component and register a new /admin route in the TanStack Router configuration. Add the route definition alongside the existing rootRoute (/), homeRoute, and signupRoute. Ensure the admin route uses the shared Layout via the rootRoute's Outlet, maintaining consistent navigation and footer across all pages. Follow the same pattern used for the existing routes to ensure proper routing behavior."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "kind": "build_request",
+  "title": "Add admin page listing all registered members",
+  "projectName": "Blue Panthers",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "text": "Create an Admin page (route: /admin) that fetches all registered members from the backend using the existing useGetAllMembers query hook and displays them in a styled table showing each member's name, email, role, and sign-up timestamp. Apply the Blue Panthers navy/gold visual theme consistently with the rest of the site.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent-yes"
+        ],
+        "quotes": [
+          "add an admin page to your Blue Panthers site that lists everyone who has signed up"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigating to /admin renders the Admin page without errors",
+        "The page displays a table or list of all registered members",
+        "Each row shows the member's name, email, role (Player/Fan/Supporter), and sign-up timestamp",
+        "The page uses the Blue Panthers navy/gold theme consistent with existing pages",
+        "If no members have signed up, a friendly empty-state message is shown",
+        "The admin route is accessible from the navigation bar"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add an 'Admin' navigation link in the shared Layout navigation bar (desktop and mobile menus) that routes to /admin.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent-yes"
+        ],
+        "quotes": [
+          "add an admin page to your Blue Panthers site that lists everyone who has signed up"
+        ]
+      },
+      "acceptanceCriteria": [
+        "An 'Admin' link appears in both the desktop and mobile navigation menus",
+        "Clicking the link navigates to /admin",
+        "The link style is consistent with existing nav items"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Register the /admin route in the TanStack Router configuration in App.tsx so the Admin page is reachable.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent-yes"
+        ],
+        "quotes": [
+          "add an admin page to your Blue Panthers site that lists everyone who has signed up"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The /admin route is defined in App.tsx alongside the existing / and /signup routes",
+        "Navigating directly to /admin renders the Admin page"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify the backend — the existing getAllMembers endpoint already returns all members sorted by signup time",
+    "Do not edit any files under frontend/src/hooks/ or frontend/src/main.tsx",
+    "Do not edit files under frontend/src/components/ui"
+  ],
+  "nonGoals": [
+    "Authentication or access control for the admin page",
+    "Ability to delete or edit members from the admin page",
+    "Backend schema changes"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

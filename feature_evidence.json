@@ -1,0 +1,59 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-an-admin-page-route-admin-that-fetches-all-registered-members-from-the-backend-using-the-existing-usegetallmembers-query-hook-and-displays-them-in-a-styled-table-showing-each-member-s-name-email-role-and-sign-up-timestamp-apply-the-blue-panthers-navy-gold-visual-theme-consistently-with-the-rest-of-the-site",
+      "featureTitle": "Create an Admin page (route: /admin) that fetches all registered members from the backend using the existing useGetAllMembers query hook and displays them in a styled table showing each member's name, email, role, and sign-up timestamp. Apply the Blue Panthers navy/gold visual theme consistently with the rest of the site.",
+      "files": [
+        "frontend/src/pages/AdminPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-admin-navigation-link-in-the-shared-layout-navigation-bar-desktop-and-mobile-menus-that-routes-to-admin",
+      "featureTitle": "Add an 'Admin' navigation link in the shared Layout navigation bar (desktop and mobile menus) that routes to /admin.",
+      "files": [
+        "frontend/src/components/Layout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-register-the-admin-route-in-the-tanstack-router-configuration-in-app-tsx-so-the-admin-page-is-reachable",
+      "featureTitle": "Register the /admin route in the TanStack Router configuration in App.tsx so the Admin page is reachable.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

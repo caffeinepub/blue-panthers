@@ -1,0 +1,19 @@
+{
+  "backend/main.mo": "Motoko actor defining a Member registry with roles (player, fan, supporter), storing members in a Map keyed by email, and exposing register and getAllMembers (sorted by signup time) endpoints.",
+  "feature_evidence.json": "Feature evidence report mapping three implemented features (AdminPage component, Admin nav link in Layout, /admin route registration in App.tsx) to their source files and test IDs.",
+  "frontend-file-summaries.txt": "JSON document containing one-sentence summaries of each frontend source file, serving as a quick reference for the project's frontend structure.",
+  "frontend/index.css": "Base Tailwind CSS file defining shadcn-compatible OKLCH CSS custom properties for light and dark color themes without any Blue Panthers branding.",
+  "frontend/index.html": "Minimal HTML entry point titled 'Blue Panthers' that mounts the React app into a root div and loads main.tsx as a module.",
+  "frontend/src/App.tsx": "Root TanStack Router setup defining three routes (/, /signup, /admin) under a shared Layout, including the AdminPage component.",
+  "frontend/src/components/Layout.tsx": "Shared layout component with a sticky navy navigation bar containing Home, Join the Team, and Admin links for both desktop and mobile menus, plus a footer.",
+  "frontend/src/hooks/useActor.ts": "React Query hook that creates and caches an authenticated or anonymous ICP backend actor based on the current Internet Identity, invalidating dependent queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Internet Identity authentication hook and provider using DFINITY AuthClient, exposing identity, login/clear functions, and login status to the component tree via React context.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for backend interaction: useGetAllMembers fetches all members, and useRegisterMember handles member registration with cache invalidation on success.",
+  "frontend/src/index.css": "Global stylesheet importing Bebas Neue and Inter fonts, defining Blue Panthers navy/gold OKLCH design tokens for light/dark modes, and utility classes for diagonal clips and color helpers.",
+  "frontend/src/main.tsx": "React app entry point that wraps the App in QueryClientProvider and InternetIdentityProvider before rendering into the DOM root.",
+  "frontend/src/pages/AdminPage.tsx": "Admin panel page that fetches all registered members via `useGetAllMembers` and displays them in a styled table with name, email, role badge, and signup timestamp, plus a stats bar showing counts by role.",
+  "frontend/src/pages/HomePage.tsx": "Landing page for the Blue Panthers basketball team featuring a hero section with CTA buttons, team stats, feature highlights, and mascot imagery using the navy/gold theme.",
+  "frontend/src/pages/SignUpPage.tsx": "Sign-up form page allowing visitors to register with name, email, and role (Player/Fan/Supporter), calling the `useRegisterMember` mutation and displaying success or error feedback.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration defining the Blue Panthers design system with navy/gold color palettes, Bebas Neue/Inter fonts, custom shadows, border radii, and animation keyframes.",
+  "project_state.json": "Project state manifest tracking implemented features (homepage, sign-up, admin page, routing, theming) and pending feature requests for the Blue Panthers basketball team website."
+}

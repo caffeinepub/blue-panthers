@@ -1,0 +1,10 @@
+{
+  "frontend/src/index.css": "Global styles with Blue Panthers design system — deep navy and gold/amber OKLCH color tokens for light/dark modes, Bebas Neue + Inter font imports, and utility classes for diagonal clips and color helpers.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Bebas Neue display font, navy/gold custom color scales, gold/navy box shadows, and fade-up/pulse-gold keyframe animations for the Blue Panthers theme.",
+  "frontend/src/App.tsx": "Root app component with TanStack Router defining three routes (/, /signup, /admin) wrapped in a shared Layout via Outlet, now including the AdminPage import and adminRoute.",
+  "frontend/src/components/Layout.tsx": "Shared layout shell with sticky navy nav bar (desktop + mobile), now including an \"Admin\" link in both desktop and mobile menus and in the footer, alongside the existing Home and Join the Team links.",
+  "frontend/src/pages/HomePage.tsx": "Homepage featuring a hero section with mascot image and hero banner, gold stats bar, feature cards, role selection section, and a final CTA block — all in the Blue Panthers navy/gold theme.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for the backend — useGetAllMembers fetches all registered members, useRegisterMember handles sign-up mutation with cache invalidation.",
+  "frontend/src/pages/SignUpPage.tsx": "Two-panel sign-up page with a branded navy left panel (mascot + tagline) and a right-side form with name/email/role fields, validation, inline error messages, duplicate email handling, and a success confirmation state.",
+  "frontend/src/pages/AdminPage.tsx": "New admin page at /admin that fetches and displays all registered Blue Panthers members in a styled table using useGetAllMembers, showing name, email, role badge, and formatted signup timestamp, with loading skeletons, error state, empty state, and a stats summary bar — all in the navy/gold theme."
+}
