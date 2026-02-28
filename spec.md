@@ -1,29 +1,21 @@
 # Blue Panthers
 
 ## Current State
-The site has a Home page, Sign Up page, and Admin page. Navigation links to all three. The app uses a navy/gold color scheme with a consistent Layout component.
+The app has a backend with `getAllMembers()` as a public query and `register()` for signups. The frontend has a `useGetAllMembers` hook that returns an empty array when `actor` is null. The `useActor` hook creates an anonymous actor by default (no login required). The admin page uses `useGetAllMembers` to display members.
 
 ## Requested Changes (Diff)
 
 ### Add
-- A new Schedule page at `/schedule` showing team events
-- First entry: "Practice" for all of May, with two time slots: 7:30–8:00 AM and 10:40–11:00 AM
-- "Schedule" nav link in Layout (desktop and mobile nav, and footer)
-- A route for `/schedule` in App.tsx
+- Retry logic and a "Refresh" button on the admin page so the admin can manually reload if members fail to appear
 
 ### Modify
-- Layout.tsx: add "Schedule" to navLinks array and footer links
-- App.tsx: add scheduleRoute and include it in routeTree
+- Fix `useGetAllMembers` hook: currently returns `[]` early when actor is null, but the actor should always be available (even anonymous). Remove the early-return guard so the query always runs once the actor is ready.
+- Improve the error state on the admin page to show more detail and a retry button.
 
 ### Remove
 - Nothing
 
 ## Implementation Plan
-1. Create `src/frontend/src/pages/SchedulePage.tsx` with a styled schedule listing May practices with both time slots
-2. Update `App.tsx` to add the schedule route
-3. Update `Layout.tsx` to add the Schedule nav link (desktop, mobile, footer)
-
-## UX Notes
-- Keep the navy/gold theme consistent with existing pages
-- Display the month (May 2026), event type (Practice), and both time slots clearly
-- Use a calendar-style or card-style layout that is easy to read on mobile
+1. In `useQueries.ts`, remove the `if (!actor) return []` early return -- let the query wait properly for the actor via `enabled: !!actor && !isFetching`.
+2. In `AdminPage.tsx`, add a retry/refresh button on the error state using `useQueryClient` to invalidate and refetch the members query.
+3. Ensure the loading skeleton shows while waiting for the actor to be ready.

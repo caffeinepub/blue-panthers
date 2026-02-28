@@ -8,8 +8,7 @@ export function useGetAllMembers() {
   return useQuery({
     queryKey: ["members"],
     queryFn: async () => {
-      if (!actor) return [];
-      return actor.getAllMembers();
+      return actor!.getAllMembers();
     },
     enabled: !!actor && !isFetching,
   });

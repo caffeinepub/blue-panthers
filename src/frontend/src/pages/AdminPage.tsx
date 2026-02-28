@@ -1,5 +1,6 @@
-import { Users, Mail, Shield, Clock } from 'lucide-react';
+import { Users, Mail, Shield, Clock, RefreshCw } from 'lucide-react';
 import { useGetAllMembers } from '@/hooks/useQueries';
+import { useQueryClient } from '@tanstack/react-query';
 import { Role } from '../backend';
 import {
   Table,
@@ -11,6 +12,7 @@ import {
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Button } from '@/components/ui/button';
 
 function formatSignupTime(signupTime: bigint): string {
   // signupTime is in nanoseconds from the IC
@@ -49,7 +51,8 @@ function roleBadge(role: Role) {
 }
 
 export default function AdminPage() {
-  const { data: members, isLoading, isError } = useGetAllMembers();
+  const { data: members, isLoading, isError, refetch } = useGetAllMembers();
+  const queryClient = useQueryClient();
 
   return (
     <section className="min-h-[70vh] bg-background py-12 px-4 sm:px-6">
@@ -107,18 +110,28 @@ export default function AdminPage() {
         {/* Table Card */}
         <div className="bg-navy rounded-sm border border-gold/20 overflow-hidden shadow-navy">
           {/* Table header bar */}
-          <div className="px-6 py-4 border-b border-gold/20 flex items-center gap-2">
-            <Users className="w-4 h-4 text-gold" />
-            <span className="font-display text-lg text-white tracking-widest uppercase">
-              Registered Members
-            </span>
+          <div className="px-6 py-4 border-b border-gold/20 flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4 text-gold" />
+              <span className="font-display text-lg text-white tracking-widest uppercase">
+                Registered Members
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() => refetch()}
+              aria-label="Refresh members"
+              className="text-white/40 hover:text-gold transition-colors p-1 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            >
+              <RefreshCw className="w-4 h-4" />
+            </button>
           </div>
 
           {/* Loading state */}
           {isLoading && (
             <div className="p-6 space-y-3">
-              {[...Array(5)].map((_, i) => (
-                <Skeleton key={i} className="h-12 w-full bg-navy-light/60 rounded-sm" />
+              {['row-a', 'row-b', 'row-c', 'row-d', 'row-e'].map((id) => (
+                <Skeleton key={id} className="h-12 w-full bg-navy-light/60 rounded-sm" />
               ))}
             </div>
           )}
@@ -127,9 +140,17 @@ export default function AdminPage() {
           {isError && (
             <div className="p-12 text-center">
               <Shield className="w-10 h-10 text-gold/40 mx-auto mb-3" />
-              <p className="text-white/60 font-body text-sm">
+              <p className="text-white/60 font-body text-sm mb-4">
                 Failed to load members. Please try again.
               </p>
+              <Button
+                onClick={() => queryClient.invalidateQueries({ queryKey: ['members'] })}
+                variant="outline"
+                size="sm"
+                className="border-gold/40 text-gold hover:bg-gold/10 hover:text-gold font-body uppercase tracking-wider text-xs"
+              >
+                Try Again
+              </Button>
             </div>
           )}
 

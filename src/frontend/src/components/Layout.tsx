@@ -62,6 +62,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Mobile menu button */}
             <button
+              type="button"
               className="md:hidden text-white hover:text-gold transition-colors p-2"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
